@@ -21,14 +21,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.google</groupId>
-        <artifactId>bitcoinj-parent</artifactId>
+        <artifactId>digitalcoinj-parent</artifactId>
         <version>0.11.2-MB-ALICE</version>
     </parent>
 
-    <artifactId>bitcoinj</artifactId>
+    <artifactId>digitalcoinj</artifactId>
 
-    <name>bitcoinj</name>
-    <description>A Java Bitcoin library</description>
+    <name>digitalcoinj</name>
+    <description>A Java digitalcoin library</description>
 
     <packaging>jar</packaging>
 

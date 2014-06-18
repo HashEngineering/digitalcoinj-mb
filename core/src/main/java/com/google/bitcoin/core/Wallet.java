@@ -842,8 +842,8 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
         BigInteger valueSentToMe = tx.getValueSentToMe(this);
         BigInteger valueDifference = valueSentToMe.subtract(valueSentFromMe);
 
-        log.info("Received tx{} for {} BTC: {} [{}] in block {}", sideChain ? " on a side chain" : "",
-                bitcoinValueToFriendlyString(valueDifference), tx.getHashAsString(), relativityOffset,
+        log.info("Received tx{} for {} {}: {} [{}] in block {}", sideChain ? " on a side chain" : "",
+                bitcoinValueToFriendlyString(valueDifference), CoinDefinition.coinTicker,tx.getHashAsString(), relativityOffset,
                 block != null ? block.getHeader().getHash() : "(unit test)");
 
         // If the transaction is being replayed no need to add it to the wallet again.
@@ -2440,8 +2440,8 @@ public class Wallet implements Serializable, BlockChainListener, PeerFilterProvi
             StringBuilder builder = new StringBuilder();
             BigInteger estimatedBalance = getBalance(BalanceType.ESTIMATED);
             BigInteger availableBalance = getBalance(BalanceType.AVAILABLE);
-            builder.append(String.format("Wallet containing %s BTC (available: %s BTC) in:%n",
-                    bitcoinValueToPlainString(estimatedBalance), bitcoinValueToPlainString(availableBalance)));
+            builder.append(String.format("Wallet containing %s %s (available: %s %s) in:%n",
+                    bitcoinValueToPlainString(estimatedBalance), CoinDefinition.coinTicker, bitcoinValueToPlainString(availableBalance), CoinDefinition.coinTicker));
             builder.append(String.format("  %d pending transactions%n", pending.size()));
             builder.append(String.format("  %d unspent transactions%n", unspent.size()));
             builder.append(String.format("  %d spent transactions%n", spent.size()));

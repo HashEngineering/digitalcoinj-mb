@@ -108,7 +108,7 @@ public class CoinDefinition {
     public static final BigInteger DEFAULT_MIN_TX_FEE = BigInteger.valueOf(10000000);   // MIN_TX_FEE
     public static final BigInteger DUST_LIMIT = Utils.CENT; //main.h CTransaction::GetMinFee        0.01 coins
 
-    public static final int PROTOCOL_VERSION = 60002;          //version.h PROTOCOL_VERSION
+    public static final int PROTOCOL_VERSION = 2000000;          //version.h PROTOCOL_VERSION
     public static final int MIN_PROTOCOL_VERSION = 60002;        //version.h MIN_PROTO_VERSION - eliminate 60001 which are on the wrong fork
 
     public static final int BLOCK_CURRENTVERSION = 1;   //CBlock::CURRENT_VERSION
@@ -143,6 +143,10 @@ public class CoinDefinition {
 
     //net.cpp strDNSSeed
     static public String[] dnsSeeds = new String[] {
+            "dgc1.seed.nodes.mywl.lt",
+            "dgc2.seed.nodes.mywl.lt",
+            "dgc3.seed.nodes.mywl.lt",
+            "dgc4.seed.nodes.mywl.lt",
             //"direct.crypto-expert.com",         //offline
             //"207.12.89.119",                    //offline
             //"198.50.30.145",                    //offline
